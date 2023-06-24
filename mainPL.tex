@@ -1,0 +1,262 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% This fork/modified version has been made by Nicolás Omar González Passerino (nicolas.passerino@gmail.com, 15 Oct 2020)
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+%% Fork (before v1.6.5a): CV dark mode toggle enabler to use a inverted color palette.
+%% Use the "darkmode" option if you want a color palette used to 
+% \documentclass[10pt,a4paper,ragged2e,withhyper,darkmode]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+% If using xelatex or lualatex:
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
+\else
+% If using pdflatex:
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+% \usepackage{sourcesanspro}
+\renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+\definecolor{PrimaryColor}{HTML}{C69749}
+\definecolor{SecondaryColor}{HTML}{D49B54}
+\definecolor{ThirdColor}{HTML}{1877E8}
+\definecolor{BodyColor}{HTML}{ABABAB}
+\definecolor{EmphasisColor}{HTML}{ABABAB}
+\definecolor{BackgroundColor}{HTML}{191919}
+\else%
+\definecolor{PrimaryColor}{HTML}{001F5A}
+\definecolor{SecondaryColor}{HTML}{0039AC}
+\definecolor{ThirdColor}{HTML}{F3890B}
+\definecolor{BodyColor}{HTML}{666666}
+\definecolor{EmphasisColor}{HTML}{2E2E2E}
+\definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+%W polskim muszą być mniejsze
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+	\name{Michał Brodacki}
+	\tagline{Data Scientist}
+	%% You can add multiple photos on the left or right
+	\photoL{4cm}{zdjecie}
+	
+	\personalinfo{
+		\email{michal.broacki@gmail.com}\smallskip
+		\phone{ 506 053 021}
+		\location{ Warszawa }
+		 \\
+		\linkedin{linkedin.com/in/michal-brodacki}
+		\github{github.com/Makti}
+		\gitlab{https://gitlab.com/262240}
+		%\homepage{nicolasomar.me}
+		%\medium{nicolasomar}
+		%% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+		% \orcid{0000-0000-0000-0000}
+		%% You can add your own arbtrary detail with
+		%% \printinfo{symbol}{detail}[optional hyperlink prefix]
+		% \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+		%% Or you can declare your own field with
+		%% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+		% \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+		% \gitlab{your_id}
+	}
+	
+	\makecvheader
+	%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+	% \AtBeginEnvironment{itemize}{\small}
+	
+	%% Set the left/right column width ratio to 6:4.
+	\columnratio{0.25}
+	
+	% Start a 2-column paracol. Both the left and right columns will automatically
+	% break across pages if things get too long.
+	\begin{paracol}{2}
+		
+		% ----- LEARNING -----
+		\cvsection{Zainteresowania}
+		\cvtag{Analiza danych}
+		\cvtag{Data Mining}
+		\cvtag{SI}
+		\cvtag{Matematyka teoretyczna}
+		\cvtag{Zastosowania matematyki}
+		\cvtag{Szeregi czasowe} \\
+		\cvtag{Prognozowanie giełdowe}
+		\medskip
+		
+		
+		\cvtag{Ćwiczenia}
+		\cvtag{Budowa mięśni}
+		\cvtag{Strategie sportowe}
+		 \\
+		\cvtag{Umiejętności miękkie}
+		\medskip
+		
+		% ----- LEARNING -----
+		
+		\cvsection{Umiejętności}
+		\skill{LaTeX}{5}
+		amsmath, graphicx\\
+		\skill{R}{4}
+		Rnw, ca, stats,Shiny   \\
+		\skill{Python}{4}
+		matplotlib, numpy, pandas\\
+		
+		\skill{SQL}{4} 
+		MySQL \\
+		\skill{Git}{4}
+		\skill{PowerBi}{3}
+		\skill{\small Statistica}{3}
+		\skill{Html}{3}
+		\skill{Excel}{3}
+		\skill{CSS}{2}
+		\skill{MSO}{2}
+		\skill{JS}{1}
+		% ----- LANGUAGES -----
+		\cvsection{Języki}
+		
+		\cvlang{Angielski}{średnio zaawansowany / B2}
+		certyfikat FCE, współlokator obcokrajowiec w akademiku\\
+		\divider
+		
+		\cvlang{Niemiecki}{komunikatywny}
+		
+		\cvsection{Dodatki}
+		\cvlang{Prawo jazdy}{kategoria B}
+		%% Yeah I didn't spend too much time making all the
+		%% spacing consistent... sorry. Use \smallskip, \medskip,
+		%% \bigskip, \vpsace etc to make ajustments.
+		% ----- LANGUAGES -----
+		
+		% ----- MOST PROUD -----
+		% \cvsection{Most Proud of}
+		
+		% \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+		% \divider
+		% \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+		% \divider
+		% \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+		% ----- MOST PROUD -----
+		
+		% \cvsection{A Day of My Life}
+		
+		% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+		%\wheelchart{outer radius}{inner radius}{
+			% comma-separated list of value/text width/color/detail}
+		% \wheelchart{1.5cm}{0.5cm}{%
+			%   6/8em/accent!30/{Sleep,\\beautiful sleep},
+			%   3/8em/accent!40/Hopeful novelist by night,
+			%   8/8em/accent!60/Daytime job,
+			%   2/10em/accent/Sports and relaxation,
+			%   5/6em/accent!20/Spending time with family
+			% }
+		
+		% use ONLY \newpage if you want to force a page break for
+		% ONLY the current column
+		\newpage
+		
+		%% Switch to the right column. This will now automatically move to the second
+		%% page if the content is too long.
+		\switchcolumn
+		
+		% ----- ABOUT ME -----
+		\cvsection{O mnie}
+		\begin{quote}
+			W najbliższym czasie zostanę absolwentem studiów w dziedzinie blisko związanej z analizą danych, o dużym zainteresowaniu liczbami oraz wartościowymi informacjami, które w sobie kryją, szczególnie w kontekście sportu. Moja fascynacja danymi rozszerza się również o interesujący świat sztucznej inteligencji oraz baz danych, co można zauważyć poprzez odbyte przeze mnie praktyki oraz wykonane projekty. 
+		\end{quote}
+		% ----- ABOUT ME -----
+		
+		% ----- EDUCATION -----
+		\cvsection{Wykształcenie}
+		\cvevent{Licencjat na kierunku Matematyka i Statystyka -- Specjalizacja ze Statystyki i Analizy Danych}{| Politechnika Wrocławska}{bieżący 10 2020 -- 07 2023}{\hfil}
+		Podczas trwania studiów ukończyłem wiele kursów takich jak: Modele Regresji i Ich Zastosowania (w R), Analiza Danych Ankietowych (R/Statistica), Szeregi Czasowe (R), Eksploracja Danych (R), Bazy Danych (SQL + Python), Programowanie (Python). Niektóre z kursów wymagały prezentacji wyników za pomocą prezentacji, sprawozdań lub dokumentacji w \LaTeX'u. Poza umiejętnościami technicznymi studia nauczyły mnie również bycia wytrwałym .
+		% ----- EDUCATION -----
+		
+		% ----- EXPERIENCE -----
+		\cvsection{Doświadczenie}
+		\cvevent{Praktyka }{| Contadu}{07 2022 -- 09 2022}{\hfil}
+		Podczas praktyk byłem odpowiedzialny za pisanie skryptów wykorzystujących generatywną sztuczną inteligencję. Testowałem również różne modele sztucznej inteligencji pod kątem potrzebnych aktualnie zastosowań.  
+		Na praktykach wykorzystywałem zarówno umiejętności czysto techniczne i analityczne myślenie, ale też umiejętności miękkie, podczas prezentacji postępów. 
+
+		% ----- EXPERIENCE -----
+		
+		% ----- PROJECTS -----
+		\cvsection{Projekty}
+		\cvevent{Praca dyplomowa na temat: "Analiza korespondencji w badaniach opinii społecznej"}{\cvreference{| }{https://repo-demo.com/}}{bieżący 01 2023 -- 06 2023}{\hfil}
+		Za pomocą scrapowania udało się pozyskać komentarze w języku naturalnym z różnych stron internetowych, następnie za pomocą analizy korespondencji, algebry macierzy i modeli językowych (NLP) ocenić, czytelnicy jakich artykułów są bardziej pozytywni, a jakich negatywni.
+		
+		% ----- PROJECTS -----
+		% ----- ADDITIONAL ACTIVITIES -----
+		\cvsection{Zainteresowania i dodatkowa aktywność}
+		\cvevent{Sport}{\cvreference{| }{https://repo-demo.com/}}{}{}
+		\small W wolnych chwilach pasjonuję się sportem. Mam wyrobione certyfikaty trenera personalnego oraz sędziego koszykówki. Byłem także zaangażowany w klub "Biegam Bo Lubię Ostrołęka" oferujący darmowe treningi dla każdego. Aktualnie sport jest dla mnie sposobem na odstresowanie i pożyteczne spędzenie wolnego czasu. W ciągu ostatnich lat sport nauczył mnie zarządzania wolnym czasem, godzenia się z uczuciem porażki i wiele więcej. 
+
+		\cvevent{Analiza Danych}{\cvreference{| https://www.datacamp.com/profile/Makti }{https://www.datacamp.com/profile/Makti}}{}{}
+		\small Przerobiłem ponad 80 godzin, doskonaląc swoje umiejętności z analizy danych i programowania na portalu \textit{DataCamp}.
+		% ----- ADDITIONAL ACTIVITIES -----
+	\end{paracol}
+	
+\end{document}
